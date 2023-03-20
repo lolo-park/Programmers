@@ -48,6 +48,7 @@ result1 = f'저는 {s}를 좋아합니다. 하루에 {n}잔을 마셔요.'
 print(result1)
 #JavaScript에서는 ${} 를 사용하여 변수값을 넣어줬었징.
 
+"""
 coffee = 10
 money = 300
 while money:
@@ -61,3 +62,21 @@ while money:
 # break 를 통해 특정 조건이 끝났을 경우 빠져나가도록 설정한다.
 # 여기서 break 가 걸리지 않으면 coffee 가 0개가 되더라도 money = 300 이 계속 유지되면서
 # 무한 루프를 돌게 된다.
+"""
+
+# 위의 상황을 좀 더 구체화 시켜보자
+coffee = 10
+while True:
+    money = int(input("insert money: "))
+    if money == 300:
+        print("Get the Coffee")
+        coffee = coffee -1
+    elif money > 300:
+        print("Get the change %d with Coffee" % (money -300))
+        coffee = coffee -1
+    else:
+        print("Get the money without Coffee")
+        print("%d Coffee Left" % coffee)
+    if coffee == 0:
+        print("No Coffee Left. Stop Processing")
+        break
