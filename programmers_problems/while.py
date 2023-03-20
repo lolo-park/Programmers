@@ -41,9 +41,23 @@ while month <=12:
     print(f'2023년{month}월')
     month = month + 1
 
-# 방법 3 -따끈따끈한 f-string도 있다
+# 방법 3 - 따끈따끈한 f-string도 있다
 s = 'coffee'
 n = 5
 result1 = f'저는 {s}를 좋아합니다. 하루에 {n}잔을 마셔요.'
 print(result1)
 #JavaScript에서는 ${} 를 사용하여 변수값을 넣어줬었징.
+
+coffee = 10
+money = 300
+while money:
+    print('Got the money, Give Coffee')
+    coffee = coffee - 1
+    print('Coffee Left : %d' % coffee)
+    if coffee == 0:
+        print('Coffee - None')
+        break
+
+# break 를 통해 특정 조건이 끝났을 경우 빠져나가도록 설정한다.
+# 여기서 break 가 걸리지 않으면 coffee 가 0개가 되더라도 money = 300 이 계속 유지되면서
+# 무한 루프를 돌게 된다.
