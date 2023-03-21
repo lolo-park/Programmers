@@ -62,7 +62,7 @@ while money:
 # break 를 통해 특정 조건이 끝났을 경우 빠져나가도록 설정한다.
 # 여기서 break 가 걸리지 않으면 coffee 가 0개가 되더라도 money = 300 이 계속 유지되면서
 # 무한 루프를 돌게 된다.
-"""
+
 
 # 위의 상황을 좀 더 구체화 시켜보자
 coffee = 10
@@ -77,6 +77,15 @@ while True:
     else:
         print("Get the money without Coffee")
         print("%d Coffee Left" % coffee)
-    if coffee == 0:
-        print("No Coffee Left. Stop Processing")
-        break
+"""
+# while문의 제일 처음으로 돌아가기 continue 사용하기
+# 0 - 10 숫자 중 홀수만 출력해라
+a = 0
+while a < 10:
+    a = a + 1 #근데 여기서 짝수인 경우가 나오겠지 짝수일경우 출력하지말고 처음으로 다시 돌려라
+    if a % 2 == 0: continue
+    print(a)
+
+# while로 무한 루프 기능도 구현할 수 있다
+# while True:
+# 이런식으로!
