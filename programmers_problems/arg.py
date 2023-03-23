@@ -1,0 +1,73 @@
+# 1 - 리턴값이 없는 함수
+def add(a, b):
+    print("%d와 %d의 합은 %d 입니다." % (a, b, a+b))
+add(3, 4) # ===> 3와 4의 합은 7 입니다.
+
+a = add(3, 4)
+print(a) # ===> None. 리턴값이 없는 함수였기에 None을 출력
+
+# 2 - 여러 개의 입력값을 받는 함수
+def add_many(*args):#매개변수이름앞에 * : 모든 입력값을 모아 튜플로 만든다
+    result = 0
+    for i in args:
+        result = result + i
+    return result
+result = add_many(1,2,3)
+print(result) # ===> 6 모든 매개변수들(*args)를 더하는 함수였기에
+
+result_two = add_many(1,2,3,4,5,6,7,8,9,10)
+print(result_two)# ===> 55
+
+# 3 - 키워드 매개변수 : **를 사용하여 입력받은 매개변수를 딕셔너리로 출력함
+def print_kwargs(**kwargs):
+    print(kwargs)
+
+print_kwargs(a=1) # ===> {'a':1}
+print_kwargs(name='foo', age=3)# ===> {'name': 'foo', 'age': 3}
+
+# 4 - 리턴값은 항상 하나이다 하나로 묶어서 출력한다 !
+def add_and_mul(a, b):
+    return a+b, a*b
+result = add_and_mul(3,4)
+print(result)# ===> (7, 12)
+
+result1, result2 = add_and_mul(3, 4)
+print(result1)# ===> 7
+print(result2)# ===> 12
+
+# 5 - return 을 사용하여 함수를 빠져나가보자
+def say_nick(nick):
+    if nick == '바보':
+        return #입력값이 '바보'면 return 을 통해 함수를 바로 빠져나가버림
+    print("나의 별명은 %s 입니다" % nick)
+
+say_nick('바보')# ===> 출력 되는것이 없음
+say_nick('야호')# ===> 나의 별명은 야호입니다
+
+# 6 - 매개변수에 초깃값 미리 설정하기
+def say_myself(name, age, man=True): # man=True 매개변수의 초기값 설정
+    print('나의 이름은 %s 입니다' % name)
+    print('나는 %d살 입니다.' % age)
+    if man:
+        print("남자입니다")
+    else:
+        print("여자입니다")
+
+say_myself("박진주", 32) # ===> '남자입니다'까지 나옴
+#man이라는 변수에는 입력값을 주지 않았지만 초기값이 True로 세팅되어있었기 때문에
+say_myself("박진주", 32, True)
+say_myself("박진주", 32, False)
+# 초기값을 세팅하고 싶은 매개변수는 항상 제일 나중에 위치시키도록 하자
+
+# 7 - 함수 안에서 선언한 변수의 효력 범위
+a = 1
+def vartest(a):
+    a = a + 1
+
+vartest(3)
+print(a)# ===> 출력 : 1  함수 안에서 사용한 매개변수는 함수 밖의 변수 이름과 상관이 없다
+
+def vartest2(a):
+    a = a + 1
+    print(a)
+vartest2(3)# ===> 출력 : 4
