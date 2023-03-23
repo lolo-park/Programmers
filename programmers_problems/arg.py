@@ -93,7 +93,18 @@ print('vartest4 ==== ', c)
 # 함수는 독립적으로 존재하는 것이 권장되므로 외부 변수에 종속되는 함수는 좋은 함수가 아님
 
 # 9 - lambda 예약어 = def : def를 사용해야 할 정도로 복잡하지 않거나 def를 사용할 수 없는 곳에
+# 함수를 함수 이름 없이 선언할 수 있음
+# 리스트를 정렬하는 sort()함수, map()함수, filter()함수 등에서 잘 쓰임
 
 add_lambda = lambda e, f: e+f
 result_lambda = add_lambda(3, 4)
 print(result_lambda)
+
+# map(), filter() 함수와 같이 어떻게 쓰일 수 있는지 확인해보자
+list_in = [1,2,3,4,5,6,7,8,9]
+
+list_out_1 = map(lambda x: x * x, list_in)
+list_out_2 = filter(lambda x: x % 2 == 0, list_in)
+
+print(list(list_out_1)) # ===> [1, 4, 9, 16, 25, 36, 49, 64, 81] list_in 리스트 제곱한 리스트
+print(list(list_out_2)) # ===> [2, 4, 6, 8]
