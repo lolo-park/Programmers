@@ -71,3 +71,29 @@ def vartest2(a):
     a = a + 1
     print(a)
 vartest2(3)# ===> 출력 : 4
+
+# 8 - 함수 안에서 함수 밖의 변수를 변경
+b = 1
+def vartest3(b):
+    b = b + 1
+    return b
+
+b = vartest3(b)
+print('vartest3 ==== ',b)
+
+# global 명령어 사용하기
+c = 1
+def vartest4():
+    global c
+    c = c + 1
+
+vartest4()
+print('vartest4 ==== ', c)
+# global명령어를 사용하므로서 함수 밖에서도 변수 c 를 사용하겠다라는 것인데
+# 함수는 독립적으로 존재하는 것이 권장되므로 외부 변수에 종속되는 함수는 좋은 함수가 아님
+
+# 9 - lambda 예약어 = def : def를 사용해야 할 정도로 복잡하지 않거나 def를 사용할 수 없는 곳에
+
+add_lambda = lambda e, f: e+f
+result_lambda = add_lambda(3, 4)
+print(result_lambda)
