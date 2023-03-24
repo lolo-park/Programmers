@@ -75,7 +75,31 @@ print(one.sub()) # 0
 # 그래서 a = FourCal2() 만 부르면 안되고
 # a = FourCal2(4, 2) 이렇게 first, second에 해당하는 값을 전달해야함
 
-# ★ 그래서 __init__ 이나 setdata 중에 하나만 사용해야하는 것 같다 ★
+"""
+★ 그래서 __init__ 이나 setdata 중에 하나만 사용해야하는 것 같다 ★
+
+< 참고 사항 > 
+FourCal 클래스의 인스턴스 a에 setdata 메서드를 수행하지 않고
+add 메서드를 먼저 수행하면 | FourCal object has no attribute 'first' | 라는 오류가 발생
+WHY? setdata 메서드를 수행해야 객체 a의 객체변수 first와 second가 생성되기 때문
+
+이렇게 객체에 first, second와 같은 초기값을 설정해야 할 필요가 있을 때는 
+setdata와 같은 메서드를 호출하여 초기값을 설정하기보다는 
+생성자를 구현하는 것이 안전 
+생성자란 객체가 생성될 때 자동으로 호출되는 메서들를 의미
+
+__init__ 을 사용하면 이 메서드는 생성자가 된다
+이렇게 FourCal 클래스에 생성자를 추가한 것이 
+class FourCal:
+    def __init__(self, first, second):
+    self.first = first 
+    self.second = second 
+    
+    def add(self):
+        result = self.first + self.second
+        return result 
+"""
+
 
 
 
