@@ -11,7 +11,7 @@ b = Cookie()
 # (인스턴스라는 말은 특정 객체(a)가 어떤 클래스(Cookie)의 객체인지를 관계 위주로 설명할 때 사용)
 
 class FourCal:
-    def setdata(self, first, second): # Class안에 구현된 함수 = Method
+    def setdata(self, first, second): # class안에 구현된 함수 = Method
         self.first = first
         self.second = second
 
@@ -31,6 +31,9 @@ print(d.first) # ===> 3
 #곱하기 빼기 나누기 기능이 있는 클래스 FourCal 로 만들어보자
 
 class FourCal2:
+    def __init__(self, first, second):  #init_(self, first, second): #생성자로인식되어 객체가 생성되는 시점에 자동으로 호출
+        self.first = first
+        self.second = second
     def setdata(self, first, second):
         self.first = first
         self.second = second
@@ -46,13 +49,35 @@ class FourCal2:
     def div(self):
         result = self.first / self.second
         return result
+
 # 요렇게 Class FourCal2 를 만들었다. 클래스 FourCal2의 객체들을 활용해보자
-one = FourCal2()
-two = FourCal2()
-one.setdata(4, 2)
-two.setdata(3, 8)
-print(one.add()) # ===> 6
-print(two.add()) # ===> 11
+
+z = FourCal2(10, 10)
+print(z.add()) # 20
+print(z.sub()) # 0
+print(z.mul()) # 100
+print(z.div()) # 1.0
+
+one = FourCal2(10,10)
+two = FourCal2(10, 10)
+# one.setdata(4, 2)
+# two.setdata(3, 8)
+print(one.add()) # 20
+print(two.add()) # 20
+print(one.mul()) # 100
+print(one.div()) # 1.0
+print(one.sub()) # 0
+
+# __init__ 메서드는 생성자로 인식되어 객체가 생성되는 시점에 자동으로 호출된다
+# (이것만빼고 setdata 메서드와 동일함)
+# 생성자의 매개변수 first와 second에 해당하는 값이 전달되지않으면
+# __init__ 메서드를 쓸 경우 오류가 나게 된다.
+# 그래서 a = FourCal2() 만 부르면 안되고
+# a = FourCal2(4, 2) 이렇게 first, second에 해당하는 값을 전달해야함
+
+# ★ 그래서 __init__ 이나 setdata 중에 하나만 사용해야하는 것 같다 ★
+
+
 
 
 
