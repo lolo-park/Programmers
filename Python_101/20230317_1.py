@@ -33,3 +33,5 @@ def solution(common):
     return answer
 
 solution(1)
+
+# directory 이름 변경
