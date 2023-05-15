@@ -6,13 +6,17 @@ n = 10, k = 1
 
 n = 20, k = 2
 """
+import math
+
 
 def solution(n, k):
 
-    lamb = n * 12000
-    drink = k * 2000
+    if n >= 10:
+        k -= math.floor(n/10)
 
-    if n % 10 == 0: # n이 10의 배수일경우에만 하면 되겠다. 아니야..
-        k =+ 1
+    lambs = n * 12000
+    drinks = k * 2000
 
-    answer =
+    answer = lambs + drinks
+
+    return answer
