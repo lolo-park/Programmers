@@ -6,13 +6,11 @@ n = 10, k = 1
 
 n = 20, k = 2
 """
-import math
 
 
 def solution(n, k):
-
     if n >= 10:
-        k -= math.floor(n/10)
+        k -= n // 10
 
     lambs = n * 12000
     drinks = k * 2000
@@ -21,6 +19,4 @@ def solution(n, k):
 
     return answer
 
-"""
-수정한 것으로 commit 올라가는지 확인
-"""
+
