@@ -20,3 +20,7 @@ def solution(n, k):
     answer = lambs + drinks
 
     return answer
+
+"""
+수정한 것으로 commit 올라가는지 확인
+"""
