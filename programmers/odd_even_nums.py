@@ -18,7 +18,11 @@ def solution(num_list):
     answer = [len(even_nums), len(odd_nums)]
     return answer
 
-# 더하기연산자+= , 빼기 연산자 -= 에 좀 더 익숙해지면 심플한 코드가 작성될 수 있을 것 같다. 
+# 더하기연산자+= , 빼기 연산자 -= 에 좀 더 익숙해지면 심플한 코드가 작성될 수 있을 것 같다.
 
 
-print(solution([1, 2, 3, 4]))
+def solution(num_list):
+    answer = [0,0]
+    for n in num_list:
+        answer[n%2]+=1
+    return answer
