@@ -15,3 +15,18 @@ def solution(s1, s2):
                 answer += 1
 
     return answer
+
+# 근데 여기서 set() 자료구조를 이용하면 한줄로 끝난다.
+def solution(s1, s2):
+    return len(list(set(s1)&set(s2)))
+
+# 여기서 set()함수는 {} 객체를 리턴한다며
+
+#근데
+def solution(s1, s2):
+    return len(set(s1)&set(s2))
+#이렇게도 된다고 한다
+
+# 총 정 리
+# set()를 사용하여 {} 객체를 리턴할 수 있다.
+# len()함수를 사용하여 {} 객체의 길이도 구할 수 있다! 
