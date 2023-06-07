@@ -34,3 +34,21 @@ def solution(array, height):
 # 리스트의 index 번호는 [0]부터 매겨지기때문에 내가 구하고자 하는 요소의 index 번호가 곧
 # 그 앞에 개수를 나타내는 거지
 # 와 여기까진 그냥 생각 못했을 것 같다 !
+
+
+# 내 생각엔 index 번호를 구하는 것이 모조리 스캔하지 않아서 제일 효율적인 것 같은데,
+# for 문을 이용해 코드를 한 줄에 끝내버리는 방법도 있었다.'리스트 컴프리헨션' !
+
+def solution(array, height):
+    return sum(1 for a in array if a > height) # 1에서 시작해서 하나씩 더하기  # 1+1+1+1 = 4
+# 이것은 아래와 같은 방식인데 컴프리헨션 방식으로 한 줄로 줄인 것임.
+def solution(array, height):
+    sum = 0
+    for a in array:
+        if a > height:
+            sum += 1 # height 보다 클때마다 1씩 더하기
+    return sum # 0 + 1 + 1 + 1 + 1 = 4 
+
+# array = [183, 182, 181, 180, 162, 160]
+# height = 170 이었을 때,
+
