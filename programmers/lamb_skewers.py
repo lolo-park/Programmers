@@ -7,12 +7,16 @@ n = 10, k = 1
 n = 20, k = 2
 """
 
+
 def solution(n, k):
+    if n >= 10:
+        k -= n // 10
 
-    lamb = n * 12000
-    drink = k * 2000
+    lambs = n * 12000
+    drinks = k * 2000
 
-    if n % 10 == 0: # n이 10의 배수일경우에만 하면 되겠다. 아니야..
-        k =+ 1
+    answer = lambs + drinks
 
-    answer =
+    return answer
+
+
