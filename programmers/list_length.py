@@ -31,4 +31,12 @@ def solution2(string_list):
 
     return empty_list
 
+"""
+for i in string_list: 에서는 
+어쨌든 range 를 string_list 안으로 지정한 것이기때문에 
+괜찮다고 볼 수 있다. 
+그리고 string_list 요소들에 하나씩 접근해서 
+len(i) 를 구하게 되고 
+리스트.append()함수 안에 넣어줌으로써 요소들의 length 로 이루어진 새로운 리스트 생성 """
+
 
