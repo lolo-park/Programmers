@@ -31,5 +31,3 @@ def solution(common):
     answer = 0
     print(common)
     return answer
-
-solution(1)
