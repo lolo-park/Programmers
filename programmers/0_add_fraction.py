@@ -26,6 +26,7 @@ return
 
 import math
 
+
 def solution(numer1, denom1, numer2, denom2):
     for i in range(max(denom1, denom2), (denom1 * denom2) + 1):
         # 두 분모중 큰 수 부터 시작 두 분모를 곱한 값까지 for loop을 돌려서
@@ -41,14 +42,15 @@ def solution(numer1, denom1, numer2, denom2):
 
     c = a + b
     # 여기서 기약분수 화 해주어야함.
-    # c 와 i 의 최대공약수를 구하라
-    for j in range(min(c,i), 0, -1):
-        if c % j == 0 and i % j == 0:
-            return j
-            break
+    # c 와 i 의 최대공약수(j)를 구하라
+    for j in range(min(c,i), 0, -1): # c와 i 중 작은 수부터 0까지 -1씩 내려가며 loop
+        if c % j == 0 and i % j == 0:햣
+            break # 위 조건에 만족하면 멈추어라 (j)가 구해진다
 
-    answer = [c/j, i/j]  # 통분하여 분자는 그대로 놔두고 분자만 더해주면 분수의 덧셈 완료
+    numer = math.ceil(c/j) # 소수점 떨구기
+    denom = math.ceil(i/j) # 소수점 떨구기
+
+    answer = [numer, denom]  # 통분하여 분자는 그대로 놔두고 분자만 더해주면 분수의 덧셈 완료
     # 그러나 여기서 기약분수로 만들어 [분자, 분모]를 구하라고 했다.
     # 분자, 분모의 최소공배수를 다시 구해서 각각 나누어 주면 된다.
-
     return answer
