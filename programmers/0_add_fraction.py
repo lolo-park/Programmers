@@ -44,7 +44,7 @@ def solution(numer1, denom1, numer2, denom2):
     # 여기서 기약분수 화 해주어야함.
     # c 와 i 의 최대공약수(j)를 구하라
     for j in range(min(c,i), 0, -1): # c와 i 중 작은 수부터 0까지 -1씩 내려가며 loop
-        if c % j == 0 and i % j == 0:햣
+        if c % j == 0 and i % j == 0:
             break # 위 조건에 만족하면 멈추어라 (j)가 구해진다
 
     numer = math.ceil(c/j) # 소수점 떨구기
