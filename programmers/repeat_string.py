@@ -16,3 +16,11 @@ def solution(my_string, n):
         # my_string[i]를 n개씩 넣어준다
     return ''.join(answer)
     # 리스트에 몰린 문자열들을 붙여서 문자열로 리턴
+
+# 좀 복잡하게 생각했던 것 같고,
+# 문자열이 + 로 합쳐질 수 있다는 것을 생각했다면 !
+def solution(my_string, n):
+    answer = ''
+    for str in my_string:
+        answer += (str*n)
+    return answer
