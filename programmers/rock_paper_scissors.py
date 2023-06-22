@@ -15,3 +15,24 @@ def solution(rsp):
             answer += '2'
     return answer
 # 하지만 이건 너무 단편적이다.
+
+def solutioin(rsp):
+    # 딕셔너리를 활용한 접근은 a = b, c = d 처럼 정해진 값이 있을 때
+    # 활용하기 용이하다고 분명 공부했었다
+    d = {'0':'5', '2':'0', '5':'2'}
+    return ''.join(d[i] for i in rsp)
+    # ''.join()함수를 활용해 문자열로 합친다
+    # d[i] for i in rsp 라고 했을 때,
+    # 딕셔너리 '변수명[key값]'을 통해 value를 구할 수 있음
+
+
+# replace 함수를 써서 더 빠른 시간복잡도
+def solution(rsp):
+    rsp = rsp.replace('0', 'r')
+    # rsp에 replace된 값을 다시 저장
+    rsp = rsp.replace('2', 's')
+    rsp = rsp.replace('5', 'p')
+    rsp = rsp.replace('r', '5')
+    rsp = rsp.replace('s', '0')
+    rsp = rsp.replace('p', '2')
+    return rsp
