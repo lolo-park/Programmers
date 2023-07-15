@@ -98,4 +98,13 @@ def solution(n):
 
     return new_list[n - 1]  # 마지막리스트에 접근 하는 건데.. 이건 잘못된 듯
 # 이게 사실 얼마나 간단한 풀이로 풀리는 것일지.. 보기가 두렵다 ㅎ
-
+def solution(n):
+    answer = 0
+    for _ in range(n):
+        answer += 1
+        while answer % 3 == 0 or '3' in str(answer):
+            answer += 1
+    return answer
+# for _ in range(n) 이렇게 범위를 지정해 줄 때,
+# 특별히 사용하지 않을 변수라면 _ 로 그냥 퉁쳐도 된다는 뜻
+# 하나씩 증가하다가 3의 배수를 만나거나 3이 포함된 숫자를 만나면 하나 더 더해서 띵군다
