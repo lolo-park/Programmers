@@ -68,7 +68,7 @@ def solution(n):
     # print('numbers == ',numbers)
     # 1부터 n까지 숫자들이 들어있는 리스트 numbers
     answer = []
-    for i in range(1, n ** 2): # n의 제곱을 range로 두면 실행되는 숫자가 기하급수적으로 늘어나서 에러가남..
+    for i in range(1, n*10): # n의 제곱을 range로 두면(n**2) 실행되는 숫자가 기하급수적으로 늘어나서 에러가남..> n*10까지로바꿈
         answer.append(i)  # [1,2,3,4,5]
         for j in answer:
             if j % 3 == 0:
